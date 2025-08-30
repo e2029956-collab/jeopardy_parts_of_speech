@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Answer Sheet - Grammar Jeopardy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #2196F3;
+        }
+
+        .instructions h3 {
+            color: #1976D2;
+            margin-bottom: 10px;
+        }
+
+        .category {
+            margin-bottom: 40px;
+            break-inside: avoid;
+        }
+
+        .category-title {
+            background: #2a5298;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .questions-grid {
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .question-item {
+            display: grid;
+            grid-template-columns: 80px 1fr 1fr;
+            border-bottom: 1px solid #eee;
+            min-height: 60px;
+        }
+
+        .question-item:last-child {
+            border-bottom: none;
+        }
+
+        .value {
+            background: #ffd700;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #ddd;
+        }
+
+        .answer {
+            padding: 15px;
+            font-weight: bold;
+            color: #2e7d32;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid #eee;
+            background: #f8fff8;
+        }
+
+        .explanation {
+            padding: 15px;
+            font-size: 0.95em;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .category {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .question-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .value {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+                min-height: 40px;
+            }
+            
+            .answer {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">🖨️ Print</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="title">📋 Teacher Answer Sheet</h1>
+            <p class="subtitle">Grammar Jeopardy - Complete Answer Guide</p>
+        </div>
+        
+        <div class="content">
+            <div class="instructions">
+                <h3>Instructions for Teachers:</h3>
+                <p>• Open this page in a separate tab while running the game<br>
+                • Students give oral answers - use this sheet to verify correctness<br>
+                • Award points to the team that gives the most accurate answer<br>
+                • Feel free to accept variations of the correct answer that show understanding</p>
+            </div>
+
+            <div class="category">
+                <div class="category-title">Parts of Speech</div>
+                <div class="questions-grid">
+                    <div class="question-item">
+                        <div class="value">$100</div>
+                        <div class="answer">Stative verb</div>
+                        <div class="explanation">Stative verbs describe states, conditions, or situations that don't change, unlike dynamic verbs that show actions.</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$200</div>
+                        <div class="answer">Attributive adjective</div>
+                        <div class="explanation">Attributive adjectives can only modify nouns directly (the main issue) and cannot follow linking verbs (*the issue is main).</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$300</div>
+                        <div class="answer">Conjunction</div>
+                        <div class="explanation">Conjunctions join grammatical elements. Coordinating conjunctions connect equal elements, while subordinating conjunctions connect dependent to independent clauses.</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$400</div>
+                        <div class="answer">Relative pronoun</div>
+                        <div class="explanation">Relative pronouns connect relative clauses to main clauses and refer back to a noun or pronoun in the main clause (antecedent).</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$500</div>
+                        <div class="answer">Conjunctive adverb</div>
+                        <div class="explanation">Conjunctive adverbs show relationships between independent clauses and are typically preceded by semicolons and followed by commas.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-title">Punctuation</div>
+                <div class="questions-grid">
+                    <div class="question-item">
+                        <div class="value">$100</div>
+                        <div class="answer">Semicolon</div>
+                        <div class="explanation">Semicolons separate independent clauses when using conjunctive adverbs: 'I studied hard; however, the test was difficult.'</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$200</div>
+                        <div class="answer">Oxford comma / Serial comma</div>
+                        <div class="explanation">The Oxford (serial) comma appears before the final conjunction in a list: 'red, white, and blue' vs. 'red, white and blue'.</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$300</div>
+                        <div class="answer">Colon</div>
+                        <div class="explanation">Colons introduce lists, explanations, or quotations after complete independent clauses: 'I need three things: paper, pen, and patience.'</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$400</div>
+                        <div class="answer">Commas</div>
+                        <div class="explanation">Restrictive (defining) clauses are essential to meaning and don't use commas: 'Students who study pass' vs. 'Students, who study, pass.'</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$500</div>
+                        <div class="answer">Comma splice</div>
+                        <div class="explanation">Comma splices incorrectly join independent clauses with just a comma. Use semicolons, periods, or coordinating conjunctions instead.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-title">Verb Forms</div>
+                <div class="questions-grid">
+                    <div class="question-item">
+                        <div class="value">$100</div>
+                        <div class="answer">Gerund</div>
+                        <div class="explanation">Gerunds are verb forms ending in -ing that function as nouns. They can be subjects, objects, or complements in sentences.</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$200</div>
+                        <div class="answer">Present perfect</div>
+                        <div class="explanation">Present perfect connects past actions to the present moment: 'I have finished my homework' (it's done now).</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$300</div>
+                        <div class="answer">Past participle</div>
+                        <div class="explanation">Past participles are used in perfect tenses, passive voice, and as adjectives: 'broken window', 'I have written', 'It was made'.</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$400</div>
+                        <div class="answer">Third conditional</div>
+                        <div class="explanation">Third conditional expresses hypothetical past situations: 'If I had studied harder, I would have passed the exam.'</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$500</div>
+                        <div class="answer">Infinitive</div>
+                        <div class="explanation">Infinitives can be 'to + base form' or bare infinitives (without 'to') after modals, causative verbs, and perception verbs.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-title">Modals</div>
+                <div class="questions-grid">
+                    <div class="question-item">
+                        <div class="value">$100</div>
+                        <div class="answer">Must</div>
+                        <div class="explanation">Must expresses strong logical deduction: 'She must be home' (the lights are on, car is there - very likely true).</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$200</div>
+                        <div class="answer">Should have</div>
+                        <div class="explanation">Should have + past participle expresses regret or criticism: 'I should have studied harder' (but I didn't).</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$300</div>
+                        <div class="answer">Could</div>
+                        <div class="explanation">Could shows past ability ('I could swim at age 5'), present possibility ('It could rain'), and polite requests ('Could you help?').</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$400</div>
+                        <div class="answer">Have to</div>
+                        <div class="explanation">Have to expresses obligation or necessity from external circumstances: 'I have to work tomorrow' (it's required).</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$500</div>
+                        <div class="answer">Cannot / Can't</div>
+                        <div class="explanation">Cannot/couldn't have + past participle expresses impossibility in the past: 'She can't have finished already' (it's impossible).</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-title">Sentence Structure</div>
+                <div class="questions-grid">
+                    <div class="question-item">
+                        <div class="value">$100</div>
+                        <div class="answer">Dangling modifier</div>
+                        <div class="explanation">Dangling modifiers create confusion: 'Walking down the street, the trees looked beautiful' (trees can't walk!).</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$200</div>
+                        <div class="answer">Parallel structure / Parallelism</div>
+                        <div class="explanation">Parallel structure maintains consistency: 'I like reading, writing, and studying' (all gerunds) not 'reading, to write, and study'.</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$300</div>
+                        <div class="answer">Complex sentence</div>
+                        <div class="explanation">Complex sentences combine independent and dependent clauses: 'Although it was raining, we went outside.'</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$400</div>
+                        <div class="answer">Independent clause</div>
+                        <div class="explanation">Independent clauses express complete thoughts: 'The sun is shining' can stand alone as a sentence.</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$500</div>
+                        <div class="answer">Compound sentence</div>
+                        <div class="explanation">Compound sentences join equal clauses with conjunctions or semicolons: 'I studied hard, and I passed the test.'</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category-title">Common Mistakes</div>
+                <div class="questions-grid">
+                    <div class="question-item">
+                        <div class="value">$100</div>
+                        <div class="answer">Greengrocer's apostrophe</div>
+                        <div class="explanation">This common error adds apostrophes to simple plurals. Use apostrophes only for possession (cat's toy) or contractions (it's).</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$200</div>
+                        <div class="answer">It's</div>
+                        <div class="explanation">'Its' shows possession (the dog wagged its tail), while 'it's' means 'it is' or 'it has' (it's raining).</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$300</div>
+                        <div class="answer">Fewer</div>
+                        <div class="explanation">Use 'fewer' with countable nouns (fewer books) and 'less' with uncountable nouns (less water).</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$400</div>
+                        <div class="answer">John and I</div>
+                        <div class="explanation">Use subject pronouns in subject position: 'John and I went' not 'Me and John went.' Remove the other person to test: 'I went.'</div>
+                    </div>
+                    <div class="question-item">
+                        <div class="value">$500</div>
+                        <div class="answer">Split infinitive</div>
+                        <div class="explanation">Split infinitives place adverbs between 'to' and the verb. While often acceptable in modern English, formal writing may prefer 'to go boldly.'</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
