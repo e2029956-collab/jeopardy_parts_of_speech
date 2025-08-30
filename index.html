@@ -44,23 +44,41 @@
             opacity: 0.9;
         }
         
-        .start-btn {
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .start-btn, .teacher-btn {
             background: linear-gradient(145deg, #4CAF50, #45a049);
             color: white;
-            padding: 20px 50px;
+            padding: 20px 40px;
             border: none;
             border-radius: 30px;
-            font-size: 1.5em;
+            font-size: 1.3em;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
             font-weight: bold;
+            min-width: 200px;
+            text-align: center;
         }
         
-        .start-btn:hover {
+        .teacher-btn {
+            background: linear-gradient(145deg, #2196F3, #1976D2);
+        }
+        
+        .start-btn:hover, .teacher-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 25px rgba(76,175,80,0.4);
+        }
+        
+        .teacher-btn:hover {
+            box-shadow: 0 10px 25px rgba(33,150,243,0.4);
         }
         
         .description {
@@ -69,13 +87,28 @@
             line-height: 1.5;
             opacity: 0.8;
         }
+        
+        @media (max-width: 768px) {
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .start-btn, .teacher-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 class="title">🎯 GRAMMAR JEOPARDY 📚</h1>
         <p class="subtitle">English Grammar Challenge for B2 Students</p>
-        <a href="grammar_jeopardy.html" class="start-btn">Start Game</a>
+        <div class="buttons">
+            <a href="grammar_jeopardy.html" class="start-btn">Start Game</a>
+            <a href="teacher_answers.html" class="teacher-btn">📋 Teacher Answers</a>
+        </div>
         <p class="description">
             Team-based grammar competition<br>
             4 teams • 6 categories • 30 questions<br>
